@@ -1,0 +1,92 @@
+<!doctype html>
+
+<html>
+	<head>
+		<meta charset+"utf-8">
+		<title>Spartan Roar</title>
+		
+		<style type="text/css">
+			#container {
+				width: 550px;
+				height: 100%;
+				margin: auto;
+			}
+
+			#images {
+				height: 300px;
+				position: absolute;
+				top: 50%;
+				margin-top: -200px;
+			}
+			
+			.shield:hover {
+				fill:red;
+				opacity: 0.5;
+			}
+			
+			.shield:active {
+				opacity: 0.5;
+				fill: black;
+			}
+			
+			.greek:hover {
+				fill: red;
+				opacity: 1;
+			}
+			
+			.greek:active {
+				fill: purple;
+				opacity: 1;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div id="container">
+			<div id="images">
+				<svg width="1000" height="800">
+					<defs>
+						<filter id="my-filter" x="0" y="0">
+							<feColorMatrix type="saturate" values="5" />
+						</filter>
+					</defs>
+			
+					<defs>
+						<linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+							<stop offset="0%" stop-color="red" stop-opacity="0.8" />
+							<stop offset="100%" stop-color="yellow" stop-opacity="0.3" />
+						</linearGradient>
+					</defs>
+			
+					<!--Raster Graphics -->
+					<image id="king_leonidas" width="800" height="438.154" xlink:href="King-Leonidas.svg" />
+					<image id="lambda" width="300" height="313.043" xlink:href="Lambda.svg" transform="translate(-50,150)" >
+						<animateTransform
+							attributeName="transform"
+							begin="0s"
+							dur="2.5s"
+							type="translate" 
+							by="0,-220"
+							fill="freeze" />
+					</image>
+					
+					<!-- Text -->
+					<a xlink:href="http://en.wikipedia.org/wiki/Molon_labe">
+					<text id="spartan_saying" class="greek" x="200"  y="400"
+						font-family="Times New Roman"
+						font-size="40" >
+						MOLON LABE!
+					</text>
+					</a>
+					
+					<!-- Shield -->
+					<a xlink:href="http://en.wikipedia.org/wiki/Battle_of_Thermopylae">
+					<circle id="spartan_shield" class="shield" cx="100" cy="100" r="80" stroke="black" stroke-width="2" fill="url(#gradient1)" />
+					</a>
+					
+				</svg>
+			</div> <!-- // #images -->
+		</div> <!-- // #container -->
+	</body>
+</html>
